@@ -17,8 +17,11 @@ public interface UserDao {
     @Query("SELECT * FROM user where username LIKE  :name")
     UserTable findByUsername(String name);
 
-    @Query("SELECT COUNT(*) from user")
-    int countUsers();
+    @Query("SELECT COUNT(*) from user WHERE username = :usrmail")
+    int countUsers(String usrmail);
+
+    @Query("SELECT COUNT(*) from user WHERE username = :usrmail AND password = :pas")
+    int search(String usrmail, String pas);
 
     @Insert
     void insertAll(UserTable... users);

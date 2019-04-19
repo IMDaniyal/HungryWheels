@@ -13,26 +13,37 @@ public class UserTable {
     private String username;
 
     @ColumnInfo(name="password")
-    private int password;
+    private String password;
 
     @ColumnInfo(name="age")
-    private int age;
+    private String age;
 
     @ColumnInfo(name = "name")
     private String name;
 
     @ColumnInfo(name = "email")
-    private String lastName;
+    private String email;
 
     @ColumnInfo(name = "phone")
     private String phone;
 
+    public UserTable(@NonNull String username, String password, String age, String name, String email, String phone) {
+        this.username = username;
+        this.password = password;
+        this.age = age;
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+    }
 
-    public int getPassword() {
+    public UserTable() {
+    }
+
+    public String getPassword() {
         return password;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
@@ -40,8 +51,8 @@ public class UserTable {
         return name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getEmail() {
+        return email;
     }
 
     public String getPhone() {
@@ -56,11 +67,11 @@ public class UserTable {
         this.username = username;
     }
 
-    public void setPassword(int password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -68,8 +79,8 @@ public class UserTable {
         this.name = name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setEmail(String lastName) {
+        this.email = lastName;
     }
 
     public void setPhone(String phone) {
