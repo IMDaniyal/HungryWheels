@@ -20,7 +20,7 @@ import org.w3c.dom.Text;
 public class registration_fragment extends Fragment {
 
     TextView fullname,userid,password,password2,email,age,phone;
-    ImageView userErr,passErr;
+    ImageView userErr,passErr,emailerr;
 
 
     @Override
@@ -49,6 +49,7 @@ public class registration_fragment extends Fragment {
         phone=v.findViewById(R.id.phonetxt);
         userErr=v.findViewById(R.id.usernameerror);
         passErr=v.findViewById(R.id.passworderror);
+        emailerr=v.findViewById(R.id.emailerror);
 
         Button b=v.findViewById(R.id.Register);
         b.setOnClickListener(new Button.OnClickListener()
@@ -63,8 +64,10 @@ public class registration_fragment extends Fragment {
                                      u.setPassword(password.getText().toString());
                                      u.setPhone(phone.getText().toString());
                                      u.setUsername(userid.getText().toString());
+                                     u.setFacebook("0");
+                                     u.setTwitter("0");
 
-                                     RegisterThread rt=new RegisterThread(getActivity(),password2.getText().toString(),userErr,passErr,u,getFragmentManager());
+                                     RegisterThread rt=new RegisterThread(getActivity(),password2.getText().toString(),userErr,passErr,emailerr,u,getFragmentManager());
                                      rt.execute();
                                  }
                              }

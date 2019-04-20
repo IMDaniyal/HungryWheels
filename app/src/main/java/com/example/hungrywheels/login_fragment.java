@@ -2,6 +2,7 @@ package com.example.hungrywheels;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -58,6 +59,20 @@ public class login_fragment extends Fragment {
                                        LoginThread alpha=new LoginThread(getActivity(),username.getText().toString(),password.getText().toString());
                                        alpha.execute();
 
+
+                                   }
+                               }
+        );
+
+        Button btn2 = v.findViewById(R.id.otherlogin);
+        btn2.setOnClickListener(new Button.OnClickListener() {
+                                   @Override
+                                   public void onClick(View view)
+                                   {
+
+
+                                       Intent i= new Intent(getActivity(), MainActivity.class);
+                                       startActivity(i);
 
                                    }
                                }

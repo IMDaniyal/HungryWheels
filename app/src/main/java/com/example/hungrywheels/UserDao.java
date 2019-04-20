@@ -20,6 +20,15 @@ public interface UserDao {
     @Query("SELECT COUNT(*) from user WHERE username = :usrmail")
     int countUsers(String usrmail);
 
+    @Query("SELECT COUNT(*) from user WHERE email = :email")
+    int emailSearch(String email);
+
+    @Query("SELECT COUNT(*) from user WHERE email = :email AND fblogin = :facebook")
+    int facebookSearch(String email,String facebook);
+
+    @Query("UPDATE user SET fblogin = :facebook WHERE email = :email")
+    int updateFB(String email, String facebook);
+
     @Query("SELECT COUNT(*) from user WHERE username = :usrmail AND password = :pas")
     int search(String usrmail, String pas);
 

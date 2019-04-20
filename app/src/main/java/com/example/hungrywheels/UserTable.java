@@ -2,6 +2,7 @@ package com.example.hungrywheels;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
@@ -21,12 +22,37 @@ public class UserTable {
     @ColumnInfo(name = "name")
     private String name;
 
+    @NonNull
     @ColumnInfo(name = "email")
     private String email;
 
     @ColumnInfo(name = "phone")
     private String phone;
 
+    @ColumnInfo(name = "fblogin")
+    private String facebook;
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getTwitter() {
+        return twitter;
+    }
+
+    public void setTwitter(String twitter) {
+        this.twitter = twitter;
+    }
+
+    @ColumnInfo(name = "twitterlogin")
+    private String twitter;
+
+
+    @Ignore
     public UserTable(@NonNull String username, String password, String age, String name, String email, String phone) {
         this.username = username;
         this.password = password;

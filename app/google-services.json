@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "883705912475",
+    "firebase_url": "https://hungry-wheels-458e0.firebaseio.com",
+    "project_id": "hungry-wheels-458e0",
+    "storage_bucket": "hungry-wheels-458e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883705912475:android:985081aab4e53c8b",
+        "android_client_info": {
+          "package_name": "com.example.hungrywheels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883705912475-e9rtrg2p780aeu8gmi8kogobej56nnsu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hungrywheels",
+            "certificate_hash": "9200c0d7c8ca69ceeb060c966f07e2ceaba0d7ba"
+          }
+        },
+        {
+          "client_id": "883705912475-jc9sbfdjcno2eaoeeith4ask9sgsoq3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB8ri7sQYFejOl4rxqv1PRfHRimnqX00M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883705912475-jc9sbfdjcno2eaoeeith4ask9sgsoq3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -71,14 +71,30 @@
                 android:visibility="invisible" />
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/emailtxt"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:ems="10"
-                android:hint="Email"
-                android:inputType="textPersonName" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/emailtxt"
+                    android:layout_width="263dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:ems="10"
+                    android:hint="Email"
+                    android:inputType="textPersonName" />
+
+                <ImageView
+                    android:id="@+id/emailerror"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_weight="1"
+                    android:src="@android:drawable/stat_notify_error"
+                    android:tooltipText="Username Already exists"
+                    android:visibility="invisible" />
+            </LinearLayout>
 
             <EditText
                 android:id="@+id/password"

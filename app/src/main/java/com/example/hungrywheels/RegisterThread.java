@@ -10,18 +10,19 @@ public class RegisterThread extends AsyncTask {
     String password2;
     Context c;
     ImageView usernameError;
-    ImageView passwordError;
+    ImageView passwordError, emailerr;
     UserTable user;
-    int flag1=0,flag2=0;
+    int flag1=0,flag2=0,flag3=0;
     FragmentManager manager;
 
-    public RegisterThread( Context c,String password2, ImageView usernameError, ImageView passwordError, UserTable u,FragmentManager manager) {
+    public RegisterThread( Context c,String password2, ImageView usernameError, ImageView passwordError,ImageView emailerr, UserTable u,FragmentManager manager) {
         this.password2 = password2;
         this.c = c;
         this.usernameError = usernameError;
         this.passwordError = passwordError;
         this.user = u;
         this.manager=manager;
+        this.emailerr=emailerr;
     }
 
 
@@ -32,11 +33,15 @@ public class RegisterThread extends AsyncTask {
         {
             flag1=1;
         }
+        if(myDb.userDao().emailSearch(user.getEmail())>0)
+        {
+            flag3=1;
+        }
         if(!user.getPassword().equals(password2))
         {
             flag2=1;
         }
-        if(flag1==0 && flag2==0)
+        if(flag1==0 && flag2==0 && flag3==0)
         {
             myDb.userDao().insertAll(user);
         }
@@ -64,7 +69,15 @@ public class RegisterThread extends AsyncTask {
         {
             passwordError.setVisibility(View.INVISIBLE);
         }
-        if(flag1==0 && flag2==0){
+        if(flag3==1)
+        {
+            emailerr.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            emailerr.setVisibility(View.INVISIBLE);
+        }
+        if(flag1==0 && flag2==0 && flag3==0){
             login_fragment bdf = new login_fragment();
             manager.beginTransaction().replace(R.id.placeholder,bdf).commit();
 
