@@ -40,10 +40,10 @@ public class LoginThread extends AsyncTask {
 
         if (flag) {
             Toast.makeText(c, "LOGIN Succesfully", Toast.LENGTH_SHORT).show();
-            //Intent w= new Intent(c,jon si class pa bhejna ha);
+            Intent w= new Intent(c,exampleActivity.class);
             //w.putExtra("username",username);
             //w.putExtra("password",password);
-            //c.startActivity(w);
+            c.startActivity(w);
         } else {
             Toast.makeText(c, "Enter Correct Credentials", Toast.LENGTH_SHORT).show();
 

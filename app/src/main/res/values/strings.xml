@@ -6,4 +6,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="invitation_deep_link">https://hungrywheels.page.link/y6N7</string>
+    <string name="invitation_cta">Click button</string>
+    <string name="invitation_custom_image"><![CDATA[https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.sydneycommercialkitchens.com.au%2Fimages%2Fblog%2FWOODSONBAINMARIE4.jpg&imgrefurl=https%3A%2F%2Fwww.sydneycommercialkitchens.com.au%2Fsck-blog%2Fdisplaying-food-attractively&docid=U-01IdGrIXCXFM&tbnid=bNBx3TUjUgp7JM%3A&vet=10ahUKEwiDt9ya6e3hAhV-7HMBHa_QCDcQMwg5KAAwAA..i&w=400&h=400&bih=722&biw=1536&q=hot%20food%20400x400%20image&ved=0ahUKEwiDt9ya6e3hAhV-7HMBHa_QCDcQMwg5KAAwAA&iact=mrc&uact=8]]></string>
 </resources>
