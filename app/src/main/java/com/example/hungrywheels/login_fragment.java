@@ -15,11 +15,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Locale;
 
 import static android.app.Activity.RESULT_OK;
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 
 /**
@@ -57,6 +59,9 @@ public class login_fragment extends Fragment {
         username = v.findViewById(R.id.nametxt);
         password = v.findViewById(R.id.passwordtxt);
         btn_mic = v.findViewById(R.id.imageButton);
+
+
+
 
         btn_mic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +112,8 @@ public class login_fragment extends Fragment {
         return v;
 
     }
+
+
 
     private void letstalk() {
 
