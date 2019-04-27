@@ -6,13 +6,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
-public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
+public class OrderAdapter extends RecyclerView.Adapter<FoodViewHolder> {
 
 
     ArrayList<RestaurantTable> data=new ArrayList<>();
@@ -20,9 +17,9 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
     int size;
     Context c;
 
-    public FoodAdapter(Context c){
+    public OrderAdapter(Context c){
 
-    this.c=c;
+        this.c=c;
 
 
     }

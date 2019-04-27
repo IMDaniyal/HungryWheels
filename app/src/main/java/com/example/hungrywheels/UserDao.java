@@ -17,6 +17,9 @@ public interface UserDao {
     @Query("SELECT * FROM user where username LIKE  :name")
     UserTable findByUsername(String name);
 
+    @Query("SELECT phone FROM user where username LIKE  :name")
+    String GetPhone(String name);
+
     @Query("SELECT COUNT(*) from user WHERE username = :usrmail")
     int countUsers(String usrmail);
 
