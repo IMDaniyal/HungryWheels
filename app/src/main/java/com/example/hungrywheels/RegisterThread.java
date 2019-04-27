@@ -6,6 +6,9 @@ import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class RegisterThread extends AsyncTask {
     String password2;
     Context c;
@@ -27,7 +30,13 @@ public class RegisterThread extends AsyncTask {
 
 
     @Override
-    protected Object doInBackground(Object[] objects) {
+    protected Object doInBackground(Object[] objects)
+    {
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("users");
+        String id = myRef.push().getKey();
+
         MyDatabase myDb = MyDatabase.getAppDatabase(c);
         if(myDb.userDao().countUsers(user.getUsername())>0)
         {

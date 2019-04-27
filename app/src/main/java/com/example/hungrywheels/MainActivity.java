@@ -163,6 +163,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onStart() {
         super.onStart();
         //firebaseAuth.addAuthStateListener(mAuthListener);
+        FirebaseAuth.getInstance().signOut();
+        LoginManager.getInstance().logOut();
         FirebaseAuth.getInstance().addAuthStateListener(mAuthListener);
     }
 

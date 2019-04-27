@@ -3,7 +3,15 @@ package com.example.hungrywheels;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.widget.Toast;
+
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginThread extends AsyncTask {
 
@@ -13,6 +21,11 @@ public class LoginThread extends AsyncTask {
     String password;
     boolean flag = false;
 
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+
+    }
 
     LoginThread(Context con, String username, String password) {
         c = con;
@@ -25,11 +38,12 @@ public class LoginThread extends AsyncTask {
     @Override
     protected Object doInBackground(Object[] objects) {
 
+
+
         MyDatabase myDb = MyDatabase.getAppDatabase(c);
         if (myDb.userDao().search(username, password) > 0) {
             flag = true;
         }
-
 
         return null;
     }
