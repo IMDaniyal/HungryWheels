@@ -128,6 +128,13 @@ public class login_fragment extends Fragment {
                                    }
                                }
         );
+        Button btn3 = v.findViewById(R.id.restaddbutton);
+        btn3.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.placeholder, new restaurant_fragment()).commit();
+            }
+        });
 
         Button btn2 = v.findViewById(R.id.otherlogin);
         btn2.setOnClickListener(new Button.OnClickListener() {
