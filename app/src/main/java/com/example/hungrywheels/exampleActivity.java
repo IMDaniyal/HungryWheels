@@ -33,7 +33,6 @@ public class exampleActivity extends AppCompatActivity {
                 .setMessage("Hello, Join the app now.")
                 .setDeepLink(Uri.parse(getString(R.string.invitation_deep_link)))
                 .setCustomImage(Uri.parse(getString(R.string.invitation_custom_image)))
-                .setCallToActionText(getString(R.string.invitation_cta))
                 .build();
 
         startActivityForResult(intent, REQUEST_INVITE);
