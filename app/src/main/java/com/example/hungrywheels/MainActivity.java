@@ -83,10 +83,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AppEventsLogger.activateApp(this);
         setContentView(R.layout.activity_main);
 
+
         printHashKey(this);
         txtUser = (TextView) findViewById(R.id.txtUser);
         txtEmail = (TextView) findViewById(R.id.txtEmail);
         imgProfile = (ImageView) findViewById(R.id.imgProfile);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         callbackManager = CallbackManager.Factory.create();
@@ -161,8 +163,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onStart() {
         super.onStart();
         //firebaseAuth.addAuthStateListener(mAuthListener);
-        FirebaseAuth.getInstance().signOut();
-        LoginManager.getInstance().logOut();
         FirebaseAuth.getInstance().addAuthStateListener(mAuthListener);
     }
 

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.Locale;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
@@ -19,6 +21,7 @@ public class login_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         My_Siri= new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
