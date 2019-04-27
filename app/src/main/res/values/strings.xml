@@ -6,7 +6,23 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="invitation_deep_link">https://hungrywheels.page.link/y6N7</string>
-    <string name="invitation_cta">Click button</string>
-    <string name="invitation_custom_image"><![CDATA[https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.sydneycommercialkitchens.com.au%2Fimages%2Fblog%2FWOODSONBAINMARIE4.jpg&imgrefurl=https%3A%2F%2Fwww.sydneycommercialkitchens.com.au%2Fsck-blog%2Fdisplaying-food-attractively&docid=U-01IdGrIXCXFM&tbnid=bNBx3TUjUgp7JM%3A&vet=10ahUKEwiDt9ya6e3hAhV-7HMBHa_QCDcQMwg5KAAwAA..i&w=400&h=400&bih=722&biw=1536&q=hot%20food%20400x400%20image&ved=0ahUKEwiDt9ya6e3hAhV-7HMBHa_QCDcQMwg5KAAwAA&iact=mrc&uact=8]]></string>
+    <string name="title_activity_home_screen">HomeScreenActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_main_home">MainHome</string>
+    <string name="title_activity_fu">FU</string>
+    <string name="title_activity_home_interface">HomeInterface</string>
 </resources>
