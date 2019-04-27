@@ -20,6 +20,9 @@ public interface RestaurantDao {
     @Query("SELECT COUNT(*) from restaurant where restaurantname LIKE:name")
     int countordersofRestaurant(String name);
 
+    @Query("SELECT COUNT(*) from restaurant")
+    int countfood();
+
     @Insert
     void insertAll(RestaurantTable... entry);
 
