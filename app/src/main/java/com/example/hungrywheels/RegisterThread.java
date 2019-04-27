@@ -32,7 +32,6 @@ public class RegisterThread extends AsyncTask {
     @Override
     protected Object doInBackground(Object[] objects)
     {
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("users");
         String id = myRef.push().getKey();
@@ -53,6 +52,7 @@ public class RegisterThread extends AsyncTask {
         if(flag1==0 && flag2==0 && flag3==0)
         {
             myDb.userDao().insertAll(user);
+            myRef.child(id).setValue(user);
         }
 
         return null;

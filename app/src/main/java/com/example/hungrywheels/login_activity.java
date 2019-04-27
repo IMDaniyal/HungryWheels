@@ -5,6 +5,8 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +23,10 @@ public class login_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ImageView logo=findViewById(R.id.logoimg);
+        logo.animate().rotation(180f).translationXBy(2000f).setDuration(2000);
+        FrameLayout ph=findViewById(R.id.placeholder);
+        ph.animate().alpha(1f).setDuration(5000);
 
 
         My_Siri= new TextToSpeech(this, new TextToSpeech.OnInitListener() {
