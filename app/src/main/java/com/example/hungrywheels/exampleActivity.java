@@ -29,10 +29,11 @@ public class exampleActivity extends AppCompatActivity {
         mAdView.loadAd(adRequest);
     }
      public void onInviteClicked(View view) {
-        Intent intent = new AppInviteInvitation.IntentBuilder("iNVITATION TO APP")
+        Intent intent = new AppInviteInvitation.IntentBuilder("INVITATION TO APP")
                 .setMessage("Hello, Join the app now.")
                 .setDeepLink(Uri.parse(getString(R.string.invitation_deep_link)))
                 .setCustomImage(Uri.parse(getString(R.string.invitation_custom_image)))
+                .setCallToActionText(getString(R.string.invitation_cta))
                 .build();
 
         startActivityForResult(intent, REQUEST_INVITE);
