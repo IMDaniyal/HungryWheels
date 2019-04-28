@@ -28,7 +28,7 @@ public class UserOrders extends Fragment implements RecyclerView.OnItemTouchList
 
     GestureDetector gestureDetector;
     RecyclerView orders;
-    Context c=getActivity();
+    Context c;
     int pos;
     OrderAdapter adapter;
 
@@ -60,6 +60,7 @@ public class UserOrders extends Fragment implements RecyclerView.OnItemTouchList
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_user_orders, container, false);
+        c=getActivity();
 
         gestureDetector = new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener()
         {
@@ -73,8 +74,8 @@ public class UserOrders extends Fragment implements RecyclerView.OnItemTouchList
                 {
                     pos=orders.getChildAdapterPosition(child);
 
-                    Intent z=new Intent(getActivity().getBaseContext(),OrderDetailScreen.class);
-                    startActivity(z);
+                    Intent z=new Intent(getActivity(),OrderDetailScreen.class);
+                    getActivity().startActivity(z);
 
 
                 }

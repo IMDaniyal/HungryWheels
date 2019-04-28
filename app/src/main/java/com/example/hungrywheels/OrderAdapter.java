@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class OrderAdapter extends RecyclerView.Adapter<FoodViewHolder> {
+public class OrderAdapter extends RecyclerView.Adapter<OrderViewHolder> {
 
 
     ArrayList<RestaurantTable> data=new ArrayList<>();
@@ -26,16 +26,16 @@ public class OrderAdapter extends RecyclerView.Adapter<FoodViewHolder> {
 
     @NonNull
     @Override
-    public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
 
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
-        View view=inflater.inflate(R.layout.foodview,parent,false);
+        View view=inflater.inflate(R.layout.orderview,parent,false);
 
-        return new FoodViewHolder(view);
+        return new OrderViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
 
         /*GetFoodListTask foods=new GetFoodListTask(c,data);
         foods.execute();*/

@@ -50,12 +50,13 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:text="NAME"
+            android:textColor="#FF5722"
             app:layout_constraintBottom_toTopOf="@+id/textView8"
             app:layout_constraintEnd_toStartOf="@+id/itemname"
-            app:layout_constraintHorizontal_bias="0.022"
+            app:layout_constraintHorizontal_bias="0.061"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="0.811" />
+            app:layout_constraintVertical_bias="0.772" />
 
         <TextView
             android:id="@+id/textView8"
@@ -65,11 +66,12 @@
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="40dp"
             android:text="Restaurant"
+            android:textColor="#FF5722"
             app:layout_constraintBottom_toTopOf="@+id/textView9"
             app:layout_constraintEnd_toStartOf="@+id/Rname"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.112"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
@@ -80,11 +82,13 @@
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginBottom="132dp"
             android:text="Price"
+            android:textColor="#FF5722"
+            app:layout_constraintBottom_toTopOf="@+id/order"
             app:layout_constraintEnd_toStartOf="@+id/pricetag"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="293dp" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/order"
@@ -129,9 +133,11 @@
             android:id="@+id/pricetag"
             android:layout_width="168dp"
             android:layout_height="32dp"
-            android:layout_marginBottom="136dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
+            android:layout_marginBottom="132dp"
             app:layout_constraintBottom_toTopOf="@+id/order"
-            tools:layout_editor_absoluteX="194dp" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

@@ -8,10 +8,7 @@ import android.widget.TextView;
 
 public class OrderDetailScreen extends AppCompatActivity {
 
-    TextView item=findViewById(R.id.oname1);
-    TextView res=findViewById(R.id.rname1);
-    TextView price=findViewById(R.id.pname1);
-    Button b1=findViewById(R.id.back);
+
 
 
     @Override
@@ -19,6 +16,11 @@ public class OrderDetailScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_detail_screen);
 
+
+        TextView item=findViewById(R.id.oname1);
+        TextView res=findViewById(R.id.rname1);
+        TextView price=findViewById(R.id.pname1);
+        Button b1=findViewById(R.id.back);
 
 
         b1.setOnClickListener(new Button.OnClickListener() {

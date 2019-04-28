@@ -8,15 +8,17 @@ import android.widget.TextView;
 
 public class OrderNowScreen extends AppCompatActivity {
 
-    TextView item=findViewById(R.id.itemname);
-    TextView res=findViewById(R.id.Rname);
-    TextView price=findViewById(R.id.pricetag);
-    Button b1=findViewById(R.id.order);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_now_screen);
+
+        TextView item=findViewById(R.id.itemname);
+        TextView res=findViewById(R.id.Rname);
+        TextView price=findViewById(R.id.pricetag);
+        Button b1=findViewById(R.id.order);
 
         b1.setOnClickListener(new Button.OnClickListener() {
             @Override

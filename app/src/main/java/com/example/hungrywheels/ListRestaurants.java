@@ -85,8 +85,8 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
                 {
                     pos=restaurants.getChildAdapterPosition(child);
 
-                    Intent z=new Intent(getActivity().getBaseContext(),OrderNowScreen.class);
-                    startActivity(z);
+                    Intent i = new Intent(getActivity(), OrderNowScreen.class);
+                    getActivity().startActivity(i);
 
 
                 }

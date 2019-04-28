@@ -17,8 +17,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".exampleActivity"></activity>
-        <activity android:name=".OrderNowScreen" />
-        <activity android:name=".OrderDetailScreen" />
+        <activity android:name=".OrderNowScreen" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".OrderDetailScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".login_activity">
             <intent-filter>
