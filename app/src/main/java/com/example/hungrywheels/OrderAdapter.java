@@ -37,15 +37,15 @@ public class OrderAdapter extends RecyclerView.Adapter<FoodViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
 
-        GetFoodListTask foods=new GetFoodListTask(c,data);
-        foods.execute();
+        /*GetFoodListTask foods=new GetFoodListTask(c,data);
+        foods.execute();*/
 
 
 
 
         if(data!=null) {
 
-            holder.Itemname.setText(data.get(position).getOrdername());
+            holder.Itemname.setText("");
 
         }
 
@@ -53,9 +53,9 @@ public class OrderAdapter extends RecyclerView.Adapter<FoodViewHolder> {
 
     @Override
     public int getItemCount() {
-        GetFoodCountThread p=new GetFoodCountThread(c,size);
-        p.execute();
-        return size;
+        /*GetFoodCountThread p=new GetFoodCountThread(c,size);
+        p.execute();*/
+        return 10;
     }
 
 

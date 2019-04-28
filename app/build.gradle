@@ -7,6 +7,7 @@ android {
         applicationId "com.example.hungrywheels"
         minSdkVersion 15
         targetSdkVersion 28
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -41,6 +42,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads:17.2.0'
     implementation 'com.google.firebase:firebase-ads:17.2.0'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
 
 
 }

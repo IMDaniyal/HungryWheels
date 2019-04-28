@@ -11,7 +11,6 @@ public abstract class MyDatabase extends RoomDatabase {
     private static MyDatabase INSTANCE;
 
 
-
     public abstract UserDao userDao();
     public abstract OrderDao orderDao();
     public abstract RestaurantDao restaurantDao();

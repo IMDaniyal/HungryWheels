@@ -29,7 +29,7 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
 
     GestureDetector gestureDetector;
     RecyclerView restaurants;
-    Context c=getActivity();
+    Context c;
     int pos;
     FoodAdapter adapter;
 
@@ -62,6 +62,7 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -70,6 +71,7 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
         // Inflate the layout for this fragment
        View v=inflater.inflate(R.layout.fragment_list_restaurants, container, false);
 
+        c=getActivity();
 
         gestureDetector = new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener()
         {
@@ -99,7 +101,7 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
 
         restaurants.addOnItemTouchListener(this);
         restaurants.setItemAnimator(new DefaultItemAnimator());
-        adapter=new FoodAdapter(getActivity());
+        adapter=new FoodAdapter(c);
         restaurants.setAdapter(adapter);
 
 
