@@ -4,26 +4,26 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-public class firebasetoRoomThread extends AsyncTask {
+public class firebasetoRoomThreadforRestaurant extends AsyncTask {
     Context c;
-    UserTable u;
+    RestaurantTable r;
 
-    public firebasetoRoomThread(Context c, UserTable u) {
+    public firebasetoRoomThreadforRestaurant(Context c, RestaurantTable r) {
         this.c = c;
-        this.u = u;
+        this.r = r;
     }
 
     @Override
     protected Object doInBackground(Object[] objects) {
         MyDatabase myDb = MyDatabase.getAppDatabase(c);
-        if (myDb.userDao().countUsers(u.getUsername())>0)
+        if (myDb.restaurantDao().countordersofRestaurant(r.getRestaurantname())>0)
         {
-            myDb.userDao().delete(u);
-            myDb.userDao().insertAll(u);
+            myDb.restaurantDao().delete(r);
+            myDb.restaurantDao().insertAll(r);
         }
         else
         {
-            myDb.userDao().insertAll(u);
+            myDb.restaurantDao().insertAll(r);
         }
         return null;
     }
@@ -34,3 +34,4 @@ public class firebasetoRoomThread extends AsyncTask {
 
     }
 }
+

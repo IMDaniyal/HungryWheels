@@ -19,9 +19,8 @@ public class facebookLoginThread extends AsyncTask {
     @Override
     protected void onPostExecute(Object o) {
         super.onPostExecute(o);
-        Intent i= new Intent(c, exampleActivity.class);
+        Intent i= new Intent(c, HomeInterface.class);
         i.putExtra("username",u.getUsername());
-        i.putExtra("email",u.getEmail());
         c.startActivity(i);
     }
 

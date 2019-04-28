@@ -2,15 +2,22 @@ package com.example.hungrywheels;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.appinvite.AppInviteInvitation;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class exampleActivity extends AppCompatActivity {
@@ -28,7 +35,10 @@ public class exampleActivity extends AppCompatActivity {
                 .build();
         mAdView.loadAd(adRequest);
     }
-     public void onInviteClicked(View view) {
+
+
+
+    public void onInviteClicked(View view) {
         Intent intent = new AppInviteInvitation.IntentBuilder("INVITATION TO APP")
                 .setMessage("Hello, Join the app now.")
                 .setDeepLink(Uri.parse(getString(R.string.invitation_deep_link)))
