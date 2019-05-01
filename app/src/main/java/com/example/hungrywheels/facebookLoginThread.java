@@ -27,7 +27,6 @@ public class facebookLoginThread extends AsyncTask {
     @Override
     protected Object doInBackground(Object[] objects) {
         MyDatabase myDb = MyDatabase.getAppDatabase(c);
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("users");
         String id = myRef.push().getKey();
@@ -37,7 +36,7 @@ public class facebookLoginThread extends AsyncTask {
         }
         else if(myDb.userDao().emailSearch(u.getEmail())>0)
         {
-            myRef.child(u.getUsername()).setValue(u);
+            myRef.child(id).setValue(u);
             myDb.userDao().updateFB(u.getEmail(),"1");
         }
         else{
