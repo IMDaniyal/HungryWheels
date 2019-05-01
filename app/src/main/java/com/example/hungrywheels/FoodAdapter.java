@@ -19,11 +19,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
 
     int size;
     Context c;
+    List<RestaurantTable> alpha;
 
-    public FoodAdapter(Context c){
+    public FoodAdapter(Context c,List<RestaurantTable> data){
 
     this.c=c;
-
+    this.alpha=data;
 
     }
 
@@ -40,25 +41,17 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
 
-        /*GetFoodListTask foods=new GetFoodListTask(c,data);
-        foods.execute();
-*/
+        if(alpha!=null) {
 
-
-
-        if(data!=null) {
-
-            holder.Itemname.setText("1");
-
+            holder.Itemname.setText("     "+alpha.get(position).getOrdername());
+            holder.rating.setText(alpha.get(position).getRating());
         }
 
     }
 
     @Override
     public int getItemCount() {
-        /*GetFoodCountThread p=new GetFoodCountThread(c,size);
-        p.execute();*/
-        return 5;
+        return  alpha.size();
     }
 
 

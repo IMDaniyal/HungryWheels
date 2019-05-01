@@ -23,8 +23,8 @@
 
         <TextView
             android:id="@+id/Foodname"
-            android:layout_width="363dp"
-            android:layout_height="55dp"
+            android:layout_width="191dp"
+            android:layout_height="54dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
@@ -33,7 +33,7 @@
             android:textColor="#FF5722"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintHorizontal_bias="0.444"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

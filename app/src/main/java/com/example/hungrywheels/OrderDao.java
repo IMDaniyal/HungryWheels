@@ -13,6 +13,9 @@ public interface OrderDao {
     @Query("SELECT * FROM orderlist")
     List<OrderListTable> getAll();
 
+    @Query("SELECT * FROM orderlist where username LIKE:username")
+    List<OrderListTable> GetAllOrders(String username);
+
     @Query("SELECT * FROM orderlist where username LIKE  :username AND ordername LIKE :order")
     OrderListTable findByName(String username, String order);
 

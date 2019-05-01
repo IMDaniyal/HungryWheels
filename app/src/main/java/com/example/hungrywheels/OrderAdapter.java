@@ -3,24 +3,26 @@ package com.example.hungrywheels;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderViewHolder> {
 
 
-    ArrayList<RestaurantTable> data=new ArrayList<>();
+    List<OrderListTable> data;
 
     int size;
     Context c;
 
-    public OrderAdapter(Context c){
+    public OrderAdapter(Context c,List<OrderListTable> og){
 
         this.c=c;
-
+        this.data=og;
 
     }
 
@@ -37,15 +39,11 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
 
-        /*GetFoodListTask foods=new GetFoodListTask(c,data);
-        foods.execute();*/
-
-
-
 
         if(data!=null) {
 
-            holder.Itemname.setText("");
+            holder.Itemname.setText(data.get(position).getOrdername());
+            holder.quanitiy.setText(data.get(position).getUsername());
 
         }
 
@@ -53,9 +51,9 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderViewHolder> {
 
     @Override
     public int getItemCount() {
-        /*GetFoodCountThread p=new GetFoodCountThread(c,size);
-        p.execute();*/
-        return 10;
+
+
+       return data.size();
     }
 
 

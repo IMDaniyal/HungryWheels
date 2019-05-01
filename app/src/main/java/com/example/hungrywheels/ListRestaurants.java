@@ -15,6 +15,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouchListener {
@@ -32,6 +34,7 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
     Context c;
     int pos;
     FoodAdapter adapter;
+    List<RestaurantTable> data;
 
     public ListRestaurants() {
         // Required empty public constructor
@@ -73,6 +76,7 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
 
         c=getActivity();
 
+
         gestureDetector = new GestureDetector(getActivity(), new GestureDetector.SimpleOnGestureListener()
         {
             @Override
@@ -86,6 +90,7 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
                     pos=restaurants.getChildAdapterPosition(child);
 
                     Intent i = new Intent(getActivity(), OrderNowScreen.class);
+                    i.putExtras(getActivity().getIntent().getExtras());
                     getActivity().startActivity(i);
 
 
@@ -95,15 +100,10 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
         }
 
         );
-
         restaurants=v.findViewById(R.id.FoodRecycler);
-        restaurants.setLayoutManager(new LinearLayoutManager(c));
 
-        restaurants.addOnItemTouchListener(this);
-        restaurants.setItemAnimator(new DefaultItemAnimator());
-        adapter=new FoodAdapter(c);
-        restaurants.setAdapter(adapter);
-
+        GetFoodListTask ab=new GetFoodListTask(getActivity(),restaurants,this);
+        ab.execute();
 
         return v;
 
