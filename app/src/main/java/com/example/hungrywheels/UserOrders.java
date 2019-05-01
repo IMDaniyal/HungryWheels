@@ -75,6 +75,7 @@ public class UserOrders extends Fragment implements RecyclerView.OnItemTouchList
                     pos=orders.getChildAdapterPosition(child);
 
                     Intent z=new Intent(getActivity(),OrderDetailScreen.class);
+                    z.putExtras(getActivity().getIntent().getExtras());
                     getActivity().startActivity(z);
 
 
@@ -84,14 +85,9 @@ public class UserOrders extends Fragment implements RecyclerView.OnItemTouchList
         }
 
         );
-
         orders=v.findViewById(R.id.OrderRecycler);
-        orders.setLayoutManager(new LinearLayoutManager(c));
-
-        orders.addOnItemTouchListener(this);
-        orders.setItemAnimator(new DefaultItemAnimator());
-        adapter=new OrderAdapter(getActivity());
-        orders.setAdapter(adapter);
+        GetUserOrderThread ab=new GetUserOrderThread(getActivity(),orders,this);
+        ab.execute();
 
 
 

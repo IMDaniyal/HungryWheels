@@ -8,13 +8,13 @@ import android.widget.TextView;
 public class FoodViewHolder extends RecyclerView.ViewHolder {
 
     TextView Itemname;
-    TextView quantity;
+    TextView rating;
 
 
     public FoodViewHolder(View itemView) {
         super(itemView);
         this.Itemname=itemView.findViewById(R.id.Foodname);
-        this.quantity=itemView.findViewById(R.id.qunatity);
+        this.rating=itemView.findViewById(R.id.qunatity);
 
     }
 

@@ -84,46 +84,10 @@ public class login_fragment extends Fragment {
                                    @Override
                                    public void onClick(View view) {
 
-                                       FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                       DatabaseReference myRef = database.getReference("users");
-                                       myRef.orderByChild("username").equalTo(username.getText().toString()).addChildEventListener(new ChildEventListener() {
-                                           @Override
-                                           public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                                               UserTable u=dataSnapshot.getValue(UserTable.class);
-                                               if(u.getPassword().equals(password.getText().toString()))
-                                               {
-                                                   Intent i= new Intent(getActivity(), exampleActivity.class);
-                                                   i.putExtra("username",u.getUsername());
-                                                   i.putExtra("email",u.getEmail());
-                                                   startActivity(i);
 
-                                               }
-                                           }
-
-                                           @Override
-                                           public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-                                           }
-
-                                           @Override
-                                           public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-                                           }
-
-                                           @Override
-                                           public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-                                           }
-
-                                           @Override
-                                           public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                           }
-                                       });
-                                       if(flag==false) {
                                            LoginThread alpha = new LoginThread(getActivity(), username.getText().toString(), password.getText().toString());
                                            alpha.execute();
-                                       }
+
 
                                    }
                                }

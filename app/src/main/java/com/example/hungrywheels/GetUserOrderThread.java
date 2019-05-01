@@ -6,17 +6,16 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class GetFoodListTask extends AsyncTask {
+public class GetUserOrderThread extends AsyncTask {
 
 
     Context c;
-    List<RestaurantTable> alpha;
+    List<OrderListTable> alpha;
     RecyclerView beta;
-    ListRestaurants ob;
-    GetFoodListTask(Context con,RecyclerView alpha1,ListRestaurants ob) {
+    UserOrders ob;
+    GetUserOrderThread(Context con,RecyclerView alpha1,UserOrders ob) {
         c = con;
         this.beta=alpha1;
         this.ob=ob;
@@ -28,7 +27,7 @@ public class GetFoodListTask extends AsyncTask {
     protected Object doInBackground(Object[] objects) {
 
         MyDatabase myDb = MyDatabase.getAppDatabase(c);
-        alpha=myDb.restaurantDao().getAll();
+        alpha=myDb.orderDao().GetAllOrders(ob.getActivity().getIntent().getExtras().getString("username"));
 
         return null;
     }
@@ -43,7 +42,7 @@ public class GetFoodListTask extends AsyncTask {
 
             beta.addOnItemTouchListener(ob);
             beta.setItemAnimator(new DefaultItemAnimator());
-            FoodAdapter adapter=new FoodAdapter(c,alpha);
+            OrderAdapter adapter=new OrderAdapter(c,alpha);
             beta.setAdapter(adapter);
         }
 

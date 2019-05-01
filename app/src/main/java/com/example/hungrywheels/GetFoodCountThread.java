@@ -8,6 +8,7 @@ public class GetFoodCountThread extends AsyncTask {
 
     Context c;
     int food;
+    int a;
 
     GetFoodCountThread(Context con,int food) {
         c = con;
@@ -20,11 +21,16 @@ public class GetFoodCountThread extends AsyncTask {
     protected Object doInBackground(Object[] objects) {
 
         MyDatabase myDb = MyDatabase.getAppDatabase(c);
-        food=myDb.restaurantDao().countfood();
+       a= myDb.restaurantDao().countfood();
 
         return null;
     }
 
+    @Override
+    protected void onPostExecute(Object o) {
+        super.onPostExecute(o);
 
+        food=a;
 
+    }
 }
