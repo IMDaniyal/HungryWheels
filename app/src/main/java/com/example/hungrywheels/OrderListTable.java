@@ -7,7 +7,7 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity(tableName = "orderlist",primaryKeys = {"username","ordername"},foreignKeys = {@ForeignKey(entity =UserTable.class,parentColumns = "username",childColumns = "username"),@ForeignKey(entity = RestaurantTable.class,parentColumns = "ordername",childColumns = "ordername")})
+@Entity(tableName = "orderlist",primaryKeys = {"username","ordername"})
 public class OrderListTable {
 
     @NonNull

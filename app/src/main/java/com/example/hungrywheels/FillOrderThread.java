@@ -35,7 +35,7 @@ public class FillOrderThread extends AsyncTask {
         alpha.setOrdername(food);
         alpha.setUsername(user);
         MyDatabase myDb = MyDatabase.getAppDatabase(c);
-       /* myDb.orderDao().insertAll(alpha);*/
+        myDb.orderDao().insertAll(alpha);
 
         return null;
     }
