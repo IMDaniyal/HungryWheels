@@ -7,8 +7,12 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-@Entity(tableName = "orderlist",primaryKeys = {"username","ordername"})
+@Entity(tableName = "orderlist")
 public class OrderListTable {
+
+
+    @PrimaryKey(autoGenerate = true)
+    private int uid;
 
     @NonNull
     @ColumnInfo(name="username")
@@ -47,5 +51,13 @@ public class OrderListTable {
 
     public void setDroplocation(String droplocation) {
         this.droplocation = droplocation;
+    }
+
+    public int getUid() {
+        return uid;
+    }
+
+    public void setUid(int uid) {
+        this.uid = uid;
     }
 }
