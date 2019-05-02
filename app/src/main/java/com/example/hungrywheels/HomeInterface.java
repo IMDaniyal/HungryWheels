@@ -1,5 +1,6 @@
 package com.example.hungrywheels;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,10 +15,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class HomeInterface extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    String username;
+    ImageView image;
+    TextView name;
+    TextView email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +38,19 @@ public class HomeInterface extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        View headerView = navigationView.getHeaderView(0);
+        Intent i=getIntent();
+        username=i.getExtras().getString("username");
+
 
         MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
         ViewPager pager = findViewById(R.id.vp);
         pager.setAdapter(adapter);
+        name=headerView.findViewById(R.id.nav_user);
+        email=headerView.findViewById(R.id.nav_email);
+        image=headerView.findViewById(R.id.nav_imageview);
+        new homeInterfaceNavigationUpdateThread(getApplicationContext(),name,email,image,username).execute();
+
     }
 
     @Override
@@ -76,8 +92,19 @@ public class HomeInterface extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            Intent w= new Intent(getApplicationContext(),HomeInterface.class);
+            w.putExtra("username",username);
+            startActivity(w);
+        }
+        else if (id == R.id.nav_changepic) {
+            Intent w= new Intent(getApplicationContext(),update_profile.class);
+            w.putExtra("username",username);
+            startActivity(w);
+
+        }else if (id == R.id.nav_gallery) {
+            Intent w= new Intent(getApplicationContext(),profile.class);
+            w.putExtra("username",username);
+            startActivity(w);
 
         } else if (id == R.id.nav_slideshow) {
 

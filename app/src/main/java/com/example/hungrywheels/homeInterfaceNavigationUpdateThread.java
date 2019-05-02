@@ -8,50 +8,45 @@ import android.os.AsyncTask;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.io.File;
 import java.io.IOException;
 
 import static com.example.hungrywheels.update_profile.handleSamplingAndRotationBitmap;
 
-public class profileDisplayThread extends AsyncTask {
+public class homeInterfaceNavigationUpdateThread extends AsyncTask {
+
     Context c;
     TextView name;
-    TextView email,phone,username;
+    TextView email;
     ImageView image;
-    String user;
+    String username;
     UserTable u;
     boolean f=false;
-    String path;
     boolean picFlag=false;
+    String path;
 
-    public profileDisplayThread(Context c, TextView name, TextView email, TextView phone, TextView username, ImageView image, String user) {
+    public homeInterfaceNavigationUpdateThread(Context c, TextView name, TextView email, ImageView image, String username) {
         this.c = c;
         this.name = name;
         this.email = email;
-        this.phone = phone;
-        this.username = username;
         this.image = image;
-        this.user = user;
-        u=new UserTable();
+        this.username = username;
     }
 
     @Override
     protected Object doInBackground(Object[] objects) {
-
         MyDatabase myDb = MyDatabase.getAppDatabase(c);
-        u=myDb.userDao().findByUsername(user);
+        u=myDb.userDao().findByUsername(username);
         if(u!=null)
         {
-         f=true;
+            f=true;
         }
-        if(myDb.userDao().pic(user).equals("1"))
+        if(myDb.userDao().pic(username).equals("1"))
         {
             picFlag=true;
-            path=myDb.userDao().picPath(user);
+            path=myDb.userDao().picPath(username);
         }
+
 
         return null;
     }
@@ -59,16 +54,9 @@ public class profileDisplayThread extends AsyncTask {
     @Override
     protected void onPostExecute(Object o) {
         super.onPostExecute(o);
-        MyDatabase myDb = MyDatabase.getAppDatabase(c);
         if (f == true) {
             name.setText(u.getName());
-            if(u.getUsername().length()<15) {
-                username.setText(u.getUsername());
-            }
             email.setText(u.getEmail());
-            if(!u.getPhone().equals("-1")) {
-                phone.setText(u.getPhone());
-            }
             if (picFlag == true) {
                 File imgFile = new File(path);
                 if (imgFile.exists()) {

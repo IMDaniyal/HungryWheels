@@ -84,6 +84,12 @@ public class update_profile extends AppCompatActivity {
         });
 
     }
+    public void backkclick(View view)
+    {
+        Intent w= new Intent(getApplicationContext(),HomeInterface.class);
+        w.putExtra("username",user);
+        startActivity(w);
+    }
     public void onClick(View v) {
         imageView.setImageBitmap(null);
         if (Image != null)

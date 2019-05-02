@@ -3,6 +3,7 @@ package com.example.hungrywheels;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,5 +29,11 @@ public class profile extends AppCompatActivity {
         user=i.getExtras().getString("username");
         new profileDisplayThread(getApplicationContext(),name,email,phone,username,image,user).execute();
 
+    }
+    public void backkbutton(View view)
+    {
+        Intent w= new Intent(getApplicationContext(),HomeInterface.class);
+        w.putExtra("username",user);
+        startActivity(w);
     }
 }
