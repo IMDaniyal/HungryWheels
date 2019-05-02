@@ -54,6 +54,15 @@ public class OrderNowScreen extends AppCompatActivity {
         }
         );
 
+        item.setText(getIntent().getExtras().getString("food"));
+        price.setText(getIntent().getExtras().getString("price"));
+        res.setText("Dominos");
+
+       /* GetFoodDetails gt=new GetFoodDetails(getBaseContext(),res,getIntent().getExtras().getString("food"));
+        gt.execute();*/
+
+
+
 
 
     }

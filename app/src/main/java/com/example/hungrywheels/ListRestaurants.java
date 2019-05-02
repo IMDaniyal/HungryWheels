@@ -93,12 +93,15 @@ public class ListRestaurants extends Fragment implements RecyclerView.OnItemTouc
                     RecyclerView.ViewHolder viewHolder = restaurants.findViewHolderForAdapterPosition(pos);
                     View view = viewHolder.itemView;
                     TextView food1 =view.findViewById(R.id.Foodname);
-
+                    TextView price1=view.findViewById(R.id.foodprice);
                     String food=food1.getText().toString();
+                    String price=price1.getText().toString();
+
 
                     Intent i = new Intent(getActivity(), OrderNowScreen.class);
                     i.putExtras(getActivity().getIntent().getExtras());
                     i.putExtra("food",food );
+                    i.putExtra("price",price);
                     getActivity().startActivity(i);
 
 

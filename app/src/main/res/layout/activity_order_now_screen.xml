@@ -131,21 +131,23 @@
             android:layout_width="169dp"
             android:layout_height="35dp"
             android:layout_marginTop="88dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginEnd="44dp"
+            android:layout_marginRight="44dp"
             android:layout_marginBottom="8dp"
+            android:textColor="#FFEB3B"
             app:layout_constraintBottom_toTopOf="@+id/Rname"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="0.148" />
+            app:layout_constraintVertical_bias="0.25" />
 
         <TextView
             android:id="@+id/Rname"
             android:layout_width="169dp"
             android:layout_height="38dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
             android:layout_marginBottom="28dp"
+            android:textColor="#FFEB3B"
             app:layout_constraintBottom_toTopOf="@+id/pricetag"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -153,9 +155,10 @@
             android:id="@+id/pricetag"
             android:layout_width="168dp"
             android:layout_height="32dp"
-            android:layout_marginEnd="44dp"
-            android:layout_marginRight="44dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
             android:layout_marginBottom="132dp"
+            android:textColor="#FFEB3B"
             app:layout_constraintBottom_toTopOf="@+id/order"
             app:layout_constraintEnd_toEndOf="parent" />
 
