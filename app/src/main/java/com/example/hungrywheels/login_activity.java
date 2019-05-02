@@ -34,7 +34,6 @@ public class login_activity extends AppCompatActivity {
         FrameLayout ph=findViewById(R.id.placeholder);
         ph.animate().alpha(1f).setDuration(5000);
 
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
 
         My_Siri= new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override

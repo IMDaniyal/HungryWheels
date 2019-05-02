@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.appinvite.AppInviteInvitation;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -140,7 +141,15 @@ public class HomeInterface extends AppCompatActivity
 
 
         } else if (id == R.id.nav_send) {
-
+            Intent w= new Intent(getApplicationContext(),feedbackActivity.class);
+            w.putExtra("username",username);
+            startActivity(w);
+        }
+        else if (id == R.id.nav_logout)
+        {
+            FirebaseAuth.getInstance().signOut();
+            Intent w= new Intent(getApplicationContext(),login_activity.class);
+            startActivity(w);
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
