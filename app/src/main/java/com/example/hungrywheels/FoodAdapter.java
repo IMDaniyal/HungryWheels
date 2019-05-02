@@ -45,6 +45,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodViewHolder> {
 
             holder.Itemname.setText("     "+alpha.get(position).getOrdername());
             holder.rating.setText(alpha.get(position).getRating());
+            holder.price.setText(alpha.get(position).getPrice());
         }
 
     }

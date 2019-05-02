@@ -6,8 +6,10 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+import java.io.Serializable;
+
 @Entity(tableName = "restaurant",primaryKeys = "ordername")
-public class RestaurantTable {
+public class RestaurantTable implements Serializable {
 
 
     @NonNull
