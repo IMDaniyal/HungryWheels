@@ -7,6 +7,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
 public class FillOrderThread extends AsyncTask {
@@ -31,11 +34,15 @@ public class FillOrderThread extends AsyncTask {
     @Override
     protected Object doInBackground(Object[] objects) {
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("orders");
+        String id = myRef.push().getKey();
         OrderListTable alpha=new OrderListTable();
         alpha.setOrdername(food);
         alpha.setUsername(user);
         MyDatabase myDb = MyDatabase.getAppDatabase(c);
         myDb.orderDao().insertAll(alpha);
+        myRef.child(id).setValue(alpha);
 
         return null;
     }

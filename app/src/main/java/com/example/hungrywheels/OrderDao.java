@@ -20,7 +20,10 @@ public interface OrderDao {
     OrderListTable findByName(String username, String order);
 
     @Query("SELECT COUNT(*) from orderlist where username LIKE:username")
-    int countorders(String username);
+    int countorder(String username);
+
+    @Query("SELECT COUNT(*) from orderlist where username LIKE:username AND ordername LIKE :order")
+    int countorders(String username, String order);
 
     @Insert
     void insertAll(OrderListTable... entry);

@@ -9,70 +9,40 @@
     tools:context="com.example.hungrywheels.MainActivity">
 
 
-    <LinearLayout
-        android:id="@+id/llFacebook"
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/btnFacebookIn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginEnd="8dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="226dp"
+        android:background="@drawable/com_facebook_button_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/btnFacebookIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:background="@drawable/com_facebook_button_background" />
-
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/btnFacebookOut"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
-            android:text="L"
-            android:visibility="invisible" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/btnFacebookOut"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/llFacebook"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:text="L"
         android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnFacebookIn" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="288dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/imgProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:srcCompat="@mipmap/ic_launcher_round" />
-
-        <TextView
-            android:id="@+id/txtUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="userName" />
-
-        <TextView
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtUser"
-            android:text="Password" />
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>
