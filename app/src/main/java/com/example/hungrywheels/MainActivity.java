@@ -136,6 +136,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     u.setUsername(id);
                     u.setEmail(email);
                     u.setTwitter("0");
+                    u.setPicflag("0");
                     u.setAge("-1"); //default
                     u.setPhone("-1"); //default
                     u.setPassword("-1"); //default

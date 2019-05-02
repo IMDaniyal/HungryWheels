@@ -66,6 +66,7 @@ public class registration_fragment extends Fragment {
                                      u.setUsername(userid.getText().toString());
                                      u.setFacebook("0");
                                      u.setTwitter("0");
+                                     u.setPicflag("0");
 
                                      RegisterThread rt=new RegisterThread(getActivity(),password2.getText().toString(),userErr,passErr,emailerr,u,getFragmentManager());
                                      rt.execute();

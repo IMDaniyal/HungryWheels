@@ -35,6 +35,12 @@ public interface UserDao {
     @Query("SELECT COUNT(*) from user WHERE username = :usrmail AND password = :pas")
     int search(String usrmail, String pas);
 
+    @Query("SELECT picflag from user WHERE username = :usrmail")
+    String pic(String usrmail);
+
+    @Query("SELECT pic from user WHERE username = :usrmail")
+    String picPath(String usrmail);
+
     @Insert
     void insertAll(UserTable... users);
 

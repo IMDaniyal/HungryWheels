@@ -83,8 +83,6 @@ public class login_fragment extends Fragment {
         btn.setOnClickListener(new Button.OnClickListener() {
                                    @Override
                                    public void onClick(View view) {
-
-
                                            LoginThread alpha = new LoginThread(getActivity(), username.getText().toString(), password.getText().toString());
                                            alpha.execute();
 

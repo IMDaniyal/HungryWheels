@@ -32,6 +32,29 @@ public class UserTable {
     @ColumnInfo(name = "fblogin")
     private String facebook;
 
+    @ColumnInfo(name = "pic")
+    private String pic;
+
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    public String getPicflag() {
+        return picflag;
+    }
+
+    public void setPicflag(String picflag) {
+        this.picflag = picflag;
+    }
+
+    @ColumnInfo(name = "picflag")
+    private String picflag;
+
+
     public String getFacebook() {
         return facebook;
     }
@@ -53,13 +76,15 @@ public class UserTable {
 
 
     @Ignore
-    public UserTable(@NonNull String username, String password, String age, String name, String email, String phone) {
+    public UserTable(@NonNull String username, String password, String age, String name, String email, String phone, String pic,String picflag) {
         this.username = username;
         this.password = password;
         this.age = age;
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.pic=pic;
+        this.picflag=picflag;
     }
 
     public UserTable() {

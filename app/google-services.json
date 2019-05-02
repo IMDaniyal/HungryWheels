@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "883705912475-p9vpmccoi7d3l169udjjkjf8hekuqnku.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hungrywheels",
+            "certificate_hash": "4eaebd571a1262c04a739abb580d1a08cc8c3a1f"
+          }
+        },
+        {
           "client_id": "883705912475-jc9sbfdjcno2eaoeeith4ask9sgsoq3f.apps.googleusercontent.com",
           "client_type": 3
         }
