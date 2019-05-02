@@ -31,6 +31,10 @@
     <string name="invitation_deep_link">https://hungrywheels.page.link/y6N7</string>
     <string name="invitation_cta">Invite</string>
     <string name="invitation_custom_image">https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRHlJ53Go9DHRO1zxBjRd5k2qC9480wsBjSxwVazljkso3Gxt2WA</string>
+    <string name="sign_in">sign_in</string>
+    <string name="enter_verification_code">enter_verification_code</string>
+    <string name="todo">TODO</string>
+    <string name="forget_password">Forget Password?</string>
     <string name="title_activity_maps">Map</string>
     <string name="get_image">Get image</string>
 </resources>
