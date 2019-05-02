@@ -23,6 +23,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".exampleActivity"></activity>
+        <activity android:name=".OrderNowScreen" />
+        <activity android:name=".pass_forget" />
+
+
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -39,13 +44,15 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".exampleActivity" />
-        <activity android:name=".OrderNowScreen"/>
+
 
         <activity android:name=".update_profile"> </activity>
         <activity android:name=".profile">
         </activity>
-        <activity android:name=".OrderDetailScreen"/>
+        <activity android:name=".OrderDetailScreen">
+
+        </activity>
+
 
 
         <activity android:name=".MainActivity" />
@@ -59,6 +66,7 @@
         <activity android:name=".HomeInterface">
 
         </activity>
+
 
 
         <meta-data
@@ -85,15 +93,6 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-9717606477061966~6538768986" />
-        <provider
-            android:authorities="${applicationId}.provider"
-            android:name="android.support.v4.content.FileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
-        </provider>
     </application>
 
 </manifest>

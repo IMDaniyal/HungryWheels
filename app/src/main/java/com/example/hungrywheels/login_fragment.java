@@ -40,7 +40,10 @@ public class login_fragment extends Fragment {
     TextView password;
     boolean flag=false;
     private int req_code = 1111;
+    private TextView forget_pass;
     private ImageButton btn_mic;
+    Intent i;
+    String Phone;
 
     public login_fragment() {
         // Required empty public constructor
@@ -68,6 +71,80 @@ public class login_fragment extends Fragment {
         password = v.findViewById(R.id.passwordtxt);
         btn_mic = v.findViewById(R.id.imageButton);
 
+        forget_pass=v.findViewById(R.id.textView14);
+
+        forget_pass.setOnClickListener(new TextView.OnClickListener() {
+                                           @Override
+                                           public void onClick(View view) {
+
+                                               FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                               DatabaseReference myRef = database.getReference("users");
+                                                // Toast.makeText(getApplicationContext(),"lala", Toast.LENGTH_SHORT).show();
+                                               myRef.orderByChild("username").equalTo(username.getText().toString()).addChildEventListener(new ChildEventListener() {
+                                                   @Override
+                                                   public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                                                       UserTable u=dataSnapshot.getValue(UserTable.class);
+                                                       Toast.makeText(getApplicationContext(),u.getUsername(), Toast.LENGTH_SHORT).show();
+                                                       if(u.getUsername().isEmpty())
+                                                       {
+                                                           Toast.makeText(getApplicationContext(),"Enter Username First", Toast.LENGTH_SHORT).show();
+                                                       }
+
+                                                       else if(u.getUsername().equals(username.getText().toString()))
+                                                       {
+
+                                                           Phone= u.getPhone();
+                                                           if(Phone.length()<10)
+                                                           {
+                                                               Toast.makeText(getApplicationContext(),"Phone Number does not exist!", Toast.LENGTH_SHORT).show();
+                                                           }
+                                                           else
+                                                           {
+
+                                                               Intent i= new Intent(getActivity(), pass_forget.class);
+                                                               i.putExtra("username",u.getUsername());
+                                                               i.putExtra("phone",u.getPhone());
+                                                               startActivity(i);
+                                                               //Toast.makeText(getApplicationContext(),"HAHAHAHHA NOOB!", Toast.LENGTH_SHORT).show();
+                                                           }
+//
+
+                                                       }
+                                                       else
+                                                       {
+                                                           Toast.makeText(getApplicationContext(),"Wrong Username!", Toast.LENGTH_SHORT).show();
+                                                       }
+
+                                                   }
+
+                                                   @Override
+                                                   public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                                                   }
+
+                                                   @Override
+                                                   public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                                                   }
+
+                                                   @Override
+                                                   public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                                                   }
+
+                                                   @Override
+                                                   public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                                   }
+                                               });
+//                                               if(flag==false) {
+//                                                   LoginThread alpha = new LoginThread(getActivity(), username.getText().toString(), password.getText().toString(),forget_pass);
+//                                                   alpha.execute();
+                                               //}
+
+                                           }
+                                       }
+        );
 
 
 
@@ -83,9 +160,47 @@ public class login_fragment extends Fragment {
         btn.setOnClickListener(new Button.OnClickListener() {
                                    @Override
                                    public void onClick(View view) {
-                                           LoginThread alpha = new LoginThread(getActivity(), username.getText().toString(), password.getText().toString());
-                                           alpha.execute();
 
+                                       FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                       DatabaseReference myRef = database.getReference("users");
+                                       myRef.orderByChild("username").equalTo(username.getText().toString()).addChildEventListener(new ChildEventListener() {
+                                           @Override
+                                           public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                                               UserTable u=dataSnapshot.getValue(UserTable.class);
+                                               if(u.getPassword().equals(password.getText().toString()))
+                                               {
+                                                   Intent i= new Intent(getActivity(),HomeInterface.class);
+                                                   i.putExtra("username",u.getUsername());
+                                                   i.putExtra("email",u.getEmail());
+                                                   startActivity(i);
+
+                                               }
+                                           }
+
+                                           @Override
+                                           public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                                           }
+
+                                           @Override
+                                           public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+                                           }
+
+                                           @Override
+                                           public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+                                           }
+
+                                           @Override
+                                           public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                           }
+                                       });
+                                       if(flag==false) {
+                                           LoginThread alpha = new LoginThread(getActivity(), username.getText().toString(), password.getText().toString(),forget_pass);
+                                           alpha.execute();
+                                       }
 
                                    }
                                }
@@ -129,7 +244,16 @@ public class login_fragment extends Fragment {
     }
 
 
-
+    //    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data)
+//    {
+//        super.onActivityResult(requestCode,resultCode,data);
+//        if(resultCode==RESULT_OK && requestCode==1122)
+//        {
+////            name.setText(data.getStringExtra("key"));
+//        }
+//        i=data;
+//    }
     private void letstalk() {
 
 
