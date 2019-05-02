@@ -43,14 +43,20 @@ public class HomeInterface extends AppCompatActivity
         username=i.getExtras().getString("username");
 
 
-        MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
+
         ViewPager pager = findViewById(R.id.vp);
-        pager.setAdapter(adapter);
+
         name=headerView.findViewById(R.id.nav_user);
         email=headerView.findViewById(R.id.nav_email);
         image=headerView.findViewById(R.id.nav_imageview);
         new homeInterfaceNavigationUpdateThread(getApplicationContext(),name,email,image,username).execute();
 
+
+        /*MyPagerAdapter adapter = new MyPagerAdapter(getSupportFragmentManager());
+        pager.setAdapter(adapter);*/
+
+        GetUserThread getuser=new GetUserThread(this,getIntent().getExtras().getString("username"),getIntent(),pager,this);
+        getuser.execute();
     }
 
     @Override

@@ -39,6 +39,7 @@ public class GetFoodListTask extends AsyncTask {
         if(alpha!=null){
 
 
+
             beta.setLayoutManager(new LinearLayoutManager(c));
 
             beta.addOnItemTouchListener(ob);
