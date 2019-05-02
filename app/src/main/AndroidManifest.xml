@@ -22,10 +22,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feedbackActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".postOnFacebook"></activity>
+        <activity
+            android:name=".feedbackActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".exampleActivity" />
-        <activity android:name=".OrderNowScreen" android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".OrderNowScreen"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,18 +45,29 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
-        <activity android:name=".update_profile" android:screenOrientation="portrait"></activity>
-        <activity android:name=".profile" android:screenOrientation="portrait"></activity>
-        <activity android:name=".OrderDetailScreen" android:screenOrientation="portrait"></activity>
-        <activity android:name=".MainActivity" android:screenOrientation="portrait" />
-        <activity android:name=".login_activity" android:screenOrientation="portrait">
+        <activity
+            android:name=".update_profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".profile"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderDetailScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".login_activity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeInterface">android:screenOrientation="portrait"</activity>
+        <activity android:name=".HomeInterface" android:screenOrientation="portrait">
+            </activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

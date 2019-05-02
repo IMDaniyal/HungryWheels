@@ -128,6 +128,9 @@ public class HomeInterface extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_tools) {
+            Intent w= new Intent(getApplicationContext(),postOnFacebook.class);
+            w.putExtra("username",username);
+            startActivity(w);
 
         } else if (id == R.id.nav_share) {
             Intent intent = new AppInviteInvitation.IntentBuilder("INVITATION TO APP")
