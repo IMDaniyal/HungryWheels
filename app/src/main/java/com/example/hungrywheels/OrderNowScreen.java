@@ -1,6 +1,9 @@
 package com.example.hungrywheels;
 
 import android.content.Intent;
+import android.os.Build;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,11 +36,18 @@ public class OrderNowScreen extends AppCompatActivity {
         TextView res=findViewById(R.id.Rname);
         TextView price=findViewById(R.id.pricetag);
         Button b1=findViewById(R.id.order);
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 
         b1.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                if (Build.VERSION.SDK_INT >= 26) {
+                    vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+                }
+                else {
+                    vibrator.vibrate(200);
+                }
                 Intent i = new Intent(getBaseContext(), MapsActivity.class);
                 i.putExtras(getIntent().getExtras());
 

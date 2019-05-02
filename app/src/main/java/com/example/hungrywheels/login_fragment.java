@@ -57,6 +57,7 @@ public class login_fragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
 
 
@@ -69,6 +70,7 @@ public class login_fragment extends Fragment {
 
         username = v.findViewById(R.id.nametxt);
         password = v.findViewById(R.id.passwordtxt);
+
         btn_mic = v.findViewById(R.id.imageButton);
 
         forget_pass=v.findViewById(R.id.textView14);
