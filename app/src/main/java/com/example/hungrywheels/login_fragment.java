@@ -75,7 +75,7 @@ public class login_fragment extends Fragment {
 
         forget_pass=v.findViewById(R.id.textView14);
 
-       /* forget_pass.setOnClickListener(new TextView.OnClickListener() {
+        forget_pass.setOnClickListener(new TextView.OnClickListener() {
                                            @Override
                                            public void onClick(View view) {
 
@@ -146,7 +146,7 @@ public class login_fragment extends Fragment {
 
                                            }
                                        }
-        );*/
+        );
 
 
 

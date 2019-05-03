@@ -38,12 +38,23 @@ public class HomeInterface extends AppCompatActivity
     TextView name;
     TextView email;
     int REQUEST_INVITE=10000;
+    String send_email;
+    int flag =0;
+
+    String subject="Welcome to Hungry Wheels";
+    String msg;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_interface);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+
+
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -55,8 +66,25 @@ public class HomeInterface extends AppCompatActivity
         Intent i=getIntent();
         username=i.getExtras().getString("username");
 
+        send_email=i.getExtras().getString("email");
+        String[] reciept=send_email.split(",");
+        msg="hello MR."+ username+ ". We are pleased to see your interest in our app! Please rate it on playstore as well! WE LOVE YOU <3 Free FOOOOOOOOOOOOOD";
+
+        if (flag == 0
+        ) {
+
+            flag=1;
+            msg="hello MR."+ username+ ". We are pleased to see your interest in our app! Please rate it on playstore as well! WE LOVE YOU <3 Free FOOOOOOOOOOOOOD";
+            Intent intent= new Intent(Intent.ACTION_SEND);
+            intent.putExtra(Intent.EXTRA_EMAIL, reciept);
+            intent.putExtra(Intent.EXTRA_SUBJECT,subject);
+            intent.putExtra(Intent.EXTRA_TEXT,msg);
+
+            intent.setType("message/rfc822");
+            startActivity(Intent.createChooser(intent,"Choose email client"));
 
 
+        }
         ViewPager pager = findViewById(R.id.vp);
 
         name=headerView.findViewById(R.id.nav_user);
